@@ -1,0 +1,54 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://dlj8v55wi2x7y"]
+
+[ext_resource type="Shader" path="res://Materials/ShrinkShader.gdshader" id="1_8w2m2"]
+
+[sub_resource type="Image" id="Image_edapb"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_3grom"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_q7bpc"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_axjpt"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture3D" id="ImageTexture3D_7xvtl"]
+_images = Array[Image]([SubResource("Image_edapb"), SubResource("Image_3grom"), SubResource("Image_q7bpc"), SubResource("Image_axjpt")])
+
+[sub_resource type="FogMaterial" id="FogMaterial_e5sqm"]
+density = 7.0035
+albedo = Color(0.545098, 0.294118, 0.458824, 1)
+emission = Color(0, 0.733333, 0.843137, 1)
+edge_fade = 0.214355
+density_texture = SubResource("ImageTexture3D_7xvtl")
+
+[resource]
+render_priority = 1
+next_pass = SubResource("FogMaterial_e5sqm")
+shader = ExtResource("1_8w2m2")

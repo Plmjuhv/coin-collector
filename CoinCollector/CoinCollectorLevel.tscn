@@ -1,0 +1,360 @@
+[gd_scene load_steps=35 format=3 uid="uid://di45pmjr733nc"]
+
+[ext_resource type="Texture2D" uid="uid://ba74w63wkw03w" path="res://Sprites/Player.png" id="1_5pbym"]
+[ext_resource type="Script" path="res://CoinCollectorLevel.gd" id="1_k4xiv"]
+[ext_resource type="Script" path="res://Player.gd" id="1_xpiki"]
+[ext_resource type="Texture2D" uid="uid://btgl3rj7lld6i" path="res://Sprites/grass.jpg" id="3_yseym"]
+[ext_resource type="PackedScene" uid="uid://bh5n3qrt1bdmv" path="res://coin.tscn" id="4_4fm82"]
+[ext_resource type="Script" path="res://Shrink.gd" id="5_2tjid"]
+[ext_resource type="Material" uid="uid://ddyl0ikvjp3wi" path="res://Materials/ShrinkCanvas.tres" id="5_vbhck"]
+[ext_resource type="Script" path="res://Timer.gd" id="6_dapim"]
+[ext_resource type="Texture2D" uid="uid://c74b3ahrlnv2b" path="res://Sprites/Portal  Animation/frame_00_delay-0.06s-fotor-bg-remover-20231221153716.png" id="8_r0ogh"]
+[ext_resource type="Texture2D" uid="uid://bne8gatsbomrs" path="res://Sprites/Portal  Animation/frame_01_delay-0.06s-fotor-bg-remover-20231221153718.png" id="9_ki2gq"]
+[ext_resource type="Texture2D" uid="uid://dxe72mah0frsu" path="res://Sprites/Portal  Animation/frame_02_delay-0.06s-fotor-bg-remover-20231221153721.png" id="10_65xun"]
+[ext_resource type="Texture2D" uid="uid://cveas04lklnkq" path="res://Sprites/Portal  Animation/frame_03_delay-0.06s-fotor-bg-remover-20231221153724.png" id="11_v7udn"]
+[ext_resource type="Texture2D" uid="uid://bts205sltnhg" path="res://Sprites/Portal  Animation/frame_04_delay-0.06s-fotor-bg-remover-20231221153727.png" id="12_f15kj"]
+[ext_resource type="Texture2D" uid="uid://b38q1lg57rmo2" path="res://Sprites/Portal  Animation/frame_05_delay-0.06s-fotor-bg-remover-20231221153730.png" id="13_tfrxd"]
+[ext_resource type="Texture2D" uid="uid://cipk6qc4txs0s" path="res://Sprites/Portal  Animation/frame_06_delay-0.06s-fotor-bg-remover-20231221153732.png" id="14_dsp0d"]
+[ext_resource type="Texture2D" uid="uid://jr25k45w1cir" path="res://Sprites/Portal  Animation/frame_07_delay-0.06s-fotor-bg-remover-20231221153735.png" id="15_xdmbt"]
+[ext_resource type="Texture2D" uid="uid://bletoa5dnn8ly" path="res://Sprites/Portal  Animation/frame_08_delay-0.06s-fotor-bg-remover-20231221153738.png" id="16_7vscg"]
+[ext_resource type="Texture2D" uid="uid://6gqmkc1vtjrb" path="res://Sprites/Portal  Animation/frame_09_delay-0.06s-fotor-bg-remover-2023122115374.png" id="17_fqaej"]
+[ext_resource type="Texture2D" uid="uid://dduqkl0e07y5l" path="res://Sprites/Portal  Animation/frame_10_delay-0.06s-fotor-bg-remover-20231221153836.png" id="18_rpovm"]
+[ext_resource type="Texture2D" uid="uid://wkth6u5eumqg" path="res://Sprites/Portal  Animation/frame_11_delay-0.06s-fotor-bg-remover-20231221153839.png" id="19_gax4u"]
+[ext_resource type="Texture2D" uid="uid://c4p4prawyvhc5" path="res://Sprites/Portal  Animation/frame_12_delay-0.06s-fotor-bg-remover-20231221153841.png" id="20_2w7e0"]
+[ext_resource type="Texture2D" uid="uid://cln6s6ve82wtp" path="res://Sprites/Portal  Animation/frame_13_delay-0.06s-fotor-bg-remover-20231221153843.png" id="21_hjjcb"]
+[ext_resource type="Texture2D" uid="uid://lefn1tv287ly" path="res://Sprites/Portal  Animation/frame_14_delay-0.06s-fotor-bg-remover-20231221153845.png" id="22_lrlt3"]
+[ext_resource type="Texture2D" uid="uid://cxkqo2fh47l6b" path="res://Sprites/Portal  Animation/frame_15_delay-0.06s-fotor-bg-remover-20231221153847.png" id="23_24k1m"]
+[ext_resource type="Texture2D" uid="uid://b8208lo01u2o7" path="res://Sprites/Portal  Animation/frame_16_delay-0.06s-fotor-bg-remover-20231221153850.png" id="24_mcm51"]
+[ext_resource type="Texture2D" uid="uid://him1s8x6543n" path="res://Sprites/Portal  Animation/frame_17_delay-0.06s-fotor-bg-remover-20231221153852.png" id="25_qehbr"]
+[ext_resource type="Texture2D" uid="uid://dun6resedxu61" path="res://Sprites/Portal  Animation/frame_18_delay-0.06s-fotor-bg-remover-20231221153854.png" id="26_db832"]
+[ext_resource type="Texture2D" uid="uid://b6dv6eh5b1atm" path="res://Sprites/Portal  Animation/frame_19_delay-0.06s-fotor-bg-remover-20231221153856.png" id="27_rk85y"]
+[ext_resource type="PackedScene" uid="uid://db42xanbxn4j4" path="res://crate.tscn" id="29_jgbdy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bcbp"]
+font_size = 30
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ny1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r0ogh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ki2gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_65xun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v7udn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f15kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tfrxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dsp0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xdmbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7vscg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fqaej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rpovm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gax4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2w7e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hjjcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lrlt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_24k1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mcm51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qehbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_db832")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rk85y")
+}],
+"loop": true,
+"name": &"Portal",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfyls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmcdf"]
+size = Vector2(53, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv2jf"]
+size = Vector2(1960, 24)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("scoreText")]
+script = ExtResource("1_k4xiv")
+scoreText = NodePath("CanvasLayer/CoinsCollected")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(1440, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 1440)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(1440, 1440)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(16, 9)
+transform = Transform2D(1, 0, 0, 1, 16, 9)
+
+[node name="CoinsCollected" type="Label" parent="CanvasLayer"]
+offset_right = 253.0
+offset_bottom = 42.0
+text = "Coins Collected: 0"
+label_settings = SubResource("LabelSettings_1bcbp")
+
+[node name="Normalise" type="Area2D" parent="."]
+material = ExtResource("5_vbhck")
+position = Vector2(1316, 434)
+script = ExtResource("5_2tjid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Normalise"]
+modulate = Color(1, 1, 1, 0.490196)
+scale = Vector2(0.63467, 0.63467)
+sprite_frames = SubResource("SpriteFrames_2ny1e")
+animation = &"Portal"
+autoplay = "Portal"
+frame_progress = 0.149506
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Normalise"]
+scale = Vector2(15.1508, 14.637)
+shape = SubResource("CircleShape2D_mfyls")
+
+[node name="Timer" type="Timer" parent="Normalise"]
+process_callback = 0
+wait_time = 0.2
+script = ExtResource("6_dapim")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(960, 960)
+script = ExtResource("1_xpiki")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_5pbym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.5, 15)
+shape = SubResource("RectangleShape2D_vmcdf")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1920
+
+[node name="WorldWalls" type="StaticBody2D" parent="."]
+position = Vector2(1, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(958, 2)
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(955, 1946)
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(-13, 973)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(1931, 970)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="Coin" parent="." instance=ExtResource("4_4fm82")]
+
+[node name="Coin2" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(167, 402)
+
+[node name="Coin3" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(600, 458)
+
+[node name="Coin4" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(893, 74)
+
+[node name="Coin5" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(34, 50)
+
+[node name="Coin6" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(381, 744)
+
+[node name="Coin7" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(122, 867)
+
+[node name="Coin8" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(431, 1118)
+
+[node name="Coin9" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(237, 1070)
+
+[node name="Coin10" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(386, 1660)
+
+[node name="Coin11" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(55, 1809)
+
+[node name="Coin12" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1083, 1521)
+
+[node name="Coin13" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(656, 1775)
+
+[node name="Coin14" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(693, 1305)
+
+[node name="Coin15" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(947, 1128)
+
+[node name="Coin16" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(896, 827)
+
+[node name="Coin17" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1377, 640)
+
+[node name="Coin18" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1147, 651)
+
+[node name="Coin19" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1614, 173)
+
+[node name="Coin20" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1139, 277)
+
+[node name="Coin21" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1732, 974)
+
+[node name="Coin22" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1310, 1067)
+
+[node name="Coin23" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1753, 1267)
+
+[node name="Coin24" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1443, 1476)
+
+[node name="Coin25" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1152, 1852)
+
+[node name="Coin26" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1812, 1684)
+
+[node name="Coin27" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1748, 498)
+
+[node name="Crate" parent="." instance=ExtResource("29_jgbdy")]
+
+[node name="Crate2" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(294, 391)
+
+[node name="Crate8" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(294, 450)
+
+[node name="Crate9" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(294, 341)
+
+[node name="Crate10" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(233, 512)
+
+[node name="Crate11" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(119, 511)
+
+[node name="Crate12" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(64, 513)
+
+[node name="Crate19" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(20, 514)
+
+[node name="Crate13" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(354, 287)
+
+[node name="Crate3" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(294, 509)
+
+[node name="Crate4" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(175, 512)
+
+[node name="Crate5" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(414, 286)
+
+[node name="Crate6" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(473, 287)
+
+[node name="Crate7" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(532, 287)
+
+[node name="Crate14" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(532, 176)
+
+[node name="Crate15" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(533, 121)
+
+[node name="Crate16" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(533, 67)
+
+[node name="Crate18" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(533, 24)
+
+[node name="Crate17" parent="." instance=ExtResource("29_jgbdy")]
+position = Vector2(533, 230)
+
+[connection signal="body_entered" from="Normalise" to="Normalise" method="_on_body_entered"]
+[connection signal="body_exited" from="Normalise" to="Normalise" method="_on_body_exited"]
+[connection signal="timeout" from="Normalise/Timer" to="Normalise" method="_on_timer_timeout"]

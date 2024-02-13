@@ -1,0 +1,194 @@
+[gd_scene load_steps=11 format=3 uid="uid://di45pmjr733nc"]
+
+[ext_resource type="Texture2D" uid="uid://ba74w63wkw03w" path="res://Sprites/Player.png" id="1_5pbym"]
+[ext_resource type="Script" path="res://Player.gd" id="1_xpiki"]
+[ext_resource type="Texture2D" uid="uid://btgl3rj7lld6i" path="res://Sprites/grass.jpg" id="3_yseym"]
+[ext_resource type="PackedScene" uid="uid://bh5n3qrt1bdmv" path="res://coin.tscn" id="4_4fm82"]
+[ext_resource type="Script" path="res://Shrink.gd" id="5_2tjid"]
+[ext_resource type="Material" uid="uid://ddyl0ikvjp3wi" path="res://Materials/ShrinkCanvas.tres" id="5_vbhck"]
+[ext_resource type="Script" path="res://Timer.gd" id="6_dapim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmcdf"]
+size = Vector2(53, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv2jf"]
+size = Vector2(1960, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfyls"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(1440, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 1440)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Background4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(1440, 1440)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yseym")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1920)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(960, 960)
+script = ExtResource("1_xpiki")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_5pbym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.5, 15)
+shape = SubResource("RectangleShape2D_vmcdf")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1920
+
+[node name="WorldWalls" type="StaticBody2D" parent="."]
+position = Vector2(1, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(958, 2)
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(955, 1946)
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(-13, 973)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldWalls"]
+position = Vector2(1931, 970)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_fv2jf")
+
+[node name="Coin" parent="." instance=ExtResource("4_4fm82")]
+
+[node name="Coin2" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(167, 402)
+
+[node name="Coin3" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(600, 458)
+
+[node name="Coin4" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(893, 74)
+
+[node name="Coin5" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(34, 50)
+
+[node name="Coin6" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(381, 744)
+
+[node name="Coin7" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(122, 867)
+
+[node name="Coin8" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(431, 1118)
+
+[node name="Coin9" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(237, 1070)
+
+[node name="Coin10" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(386, 1660)
+
+[node name="Coin11" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(55, 1809)
+
+[node name="Coin12" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1083, 1521)
+
+[node name="Coin13" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(656, 1775)
+
+[node name="Coin14" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(693, 1305)
+
+[node name="Coin15" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(947, 1128)
+
+[node name="Coin16" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(896, 827)
+
+[node name="Coin17" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1377, 640)
+
+[node name="Coin18" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1147, 651)
+
+[node name="Coin19" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1614, 173)
+
+[node name="Coin20" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1139, 277)
+
+[node name="Coin21" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1732, 974)
+
+[node name="Coin22" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1310, 1067)
+
+[node name="Coin23" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1753, 1267)
+
+[node name="Coin24" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1443, 1476)
+
+[node name="Coin25" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1152, 1852)
+
+[node name="Coin26" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1812, 1684)
+
+[node name="Coin27" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1748, 498)
+
+[node name="Coin28" parent="." instance=ExtResource("4_4fm82")]
+position = Vector2(1886, 29)
+
+[node name="Shrink" type="Area2D" parent="."]
+material = ExtResource("5_vbhck")
+position = Vector2(1316, 434)
+script = ExtResource("5_2tjid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrink"]
+scale = Vector2(15.1508, 14.637)
+shape = SubResource("CircleShape2D_mfyls")
+
+[node name="Timer" type="Timer" parent="Shrink"]
+process_callback = 0
+wait_time = 0.5
+script = ExtResource("6_dapim")
+
+[connection signal="body_entered" from="Shrink" to="Shrink" method="_on_body_entered"]
+[connection signal="body_exited" from="Shrink" to="Shrink" method="_on_body_exited"]
+[connection signal="timeout" from="Shrink/Timer" to="Shrink" method="_on_timer_timeout"]
